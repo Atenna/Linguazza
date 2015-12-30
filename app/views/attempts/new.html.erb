@@ -1,0 +1,20 @@
+<% if flash[:notice] %>
+  <p class='green'><%= flash[:notice] %></p>
+<% end %>
+
+<% if flash[:error] %>
+  <p class='red'><%= flash[:error] %></p>
+<% end %>
+
+<%= form_for @attempt do |a| %>
+  <%= a.hidden_field :word_id %>
+  <p>
+    Russian word "<%= current_user.from_for_word(@word) %>" in Slovak means...
+    <%= text_field_tag 'attempt[version]' %>
+  </p>
+  <%= submit_tag 'This' %>
+<% end %>
+
+<script>
+  document.getElementById('attempt_version').focus();
+</script>

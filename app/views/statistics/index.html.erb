@@ -1,0 +1,28 @@
+<h2>Summary</h2>
+<p>Words: <%= @words.size %><br/>
+Attempts: <%= @total_attempts %></p>
+<p class="<%= get_success_color(@total_good_attempts_percent) %>">Successful: <%= '%.2f' % @total_good_attempts_percent %></p>
+
+<p>Today: <%= '%.2f' % Word.average_leven(1.day, current_user) %><br/>
+This week: <%= '%.2f' % Word.average_leven(1.week, current_user) %><br/>
+This month: <%= '%.2f' % Word.average_leven(1.month, current_user) %></p>
+
+<h2>Overview</h2>
+<table width="100%">
+  <thead>
+    <tr>
+      <th>Russian</th>
+      <th>Slovak</th>
+      <th>Attempts</th>
+      <th>Correct in %</th>
+    </tr>
+  </thead>
+  <% @words.each do |w| %>
+    <tr class="<%= get_success_color(w.good_attempts_percent(current_user)) %>">
+      <td><%= current_user.from_for_word(w) %></td>
+      <td><%= current_user.to_for_word(w) %></td>
+      <td><%= w.total_attempts(current_user) %></td>
+      <td><%= '%.2f' % w.good_attempts_percent(current_user) %></td>
+    </tr>
+  <% end %>
+</table>
