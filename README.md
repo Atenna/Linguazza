@@ -1,11 +1,11 @@
 This project has been found and forked from here: https://github.com/shine/slovencina
 
-What's been added:
+##What's been added:
 - Bootstrap GUI
 - Static pages About and Home
 - English translation
 
-Next steps:
+##Next steps:
 - Replace Open Flash Charts with Highcharts
 - Add support for more languages (own and predefined vocabulary)
 - Even nicer GUI :)
