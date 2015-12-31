@@ -10,6 +10,7 @@
           <li><%= link_to('New attempt ('+current_user.attempts.count.to_s+')', new_attempt_path)%></li>
           <li><%= link_to 'Today problems', statistic_path(:id => 1)%></li>
           <li><%= link_to 'Graphs', graphs_path %></li>
+          <li><%= link_to 'Add word', {:controller => 'words', :action => 'new'} %></li>
           <li><%= link_to 'About', {:controller => 'static_pages', :action => 'about'} %></li>
           <li><%= link_to 'Logout', destroy_user_session_path, :method => :delete %></li>
 		    <% end %>
