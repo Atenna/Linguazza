@@ -1,6 +1,8 @@
+![logo](https://github.com/Atenna/Linguazza/blob/master/public/images/blackbird.png)
+
 This project has been found and forked from here: https://github.com/shine/slovencina
 
-##What's been added:
+##What's been done:
 - Bootstrap GUI
 - Static pages About and Home
 - English translation
